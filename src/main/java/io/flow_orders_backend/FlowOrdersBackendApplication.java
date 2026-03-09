@@ -1,4 +1,4 @@
-package io.github.marcoMedeiros.flow_orders_backend;
+package io.flow_orders_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
