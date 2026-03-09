@@ -8,7 +8,7 @@
 		<version>4.0.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>io.github.marcoMedeiros</groupId>
+	<groupId>io</groupId>
 	<artifactId>flow-orders-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>flow-orders-backend</name>
