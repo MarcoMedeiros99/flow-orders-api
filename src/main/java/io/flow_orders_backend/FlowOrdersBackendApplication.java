@@ -6,8 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FlowOrdersBackendApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FlowOrdersBackendApplication.class, args);
-	}
+    public static void main(String[] args) {
+
+        SpringApplication.run(FlowOrdersBackendApplication.class, args);
+    }
 
 }
