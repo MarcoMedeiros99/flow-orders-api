@@ -1,10 +1,13 @@
 package io.flow_orders_backend.config;
 
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
 
+import io.flow_orders_backend.entities.Category;
 import io.flow_orders_backend.entities.Order;
 import io.flow_orders_backend.entities.enums.OrderStatus;
+import io.flow_orders_backend.repositories.CategoryRepository;
 import io.flow_orders_backend.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -24,8 +27,18 @@ public class TestConfig implements CommandLineRunner{
 	@Autowired
 	private OrderRepository orderRepository;
 
+	@Autowired
+	private CategoryRepository categoryRepository;
+
 	@Override
 	public void run(String... args) throws Exception {
+
+		Category cat1 = new Category(null, "Electronics");
+		Category cat2 = new Category(null, "Books");
+		Category cat3 = new Category(null, "Computers");
+
+		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
+
 		User u1 = new User(null, "Thomas Wayne", "thomas@gmail.com", "988888888", "123456");
 		User u2 = new User(null, "Bruce Wayne", "Bruce@gmail.com", "977777777", "123456");
 
