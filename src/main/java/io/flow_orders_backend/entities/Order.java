@@ -22,7 +22,7 @@ public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderId;
+    private Long id;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
@@ -36,17 +36,17 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(Long orderId, Instant moment, OrderStatus orderStatus, User client) {
+    public Order(Long id, Instant moment, OrderStatus orderStatus, User client) {
         super();
-        this.orderId = orderId;
+        this.id = id;
         this.moment = moment;
         setOrderStatus(orderStatus);
         this.client = client;
     }
 
-    public Long getOrderId() { return orderId; }
+    public Long getId() { return id; }
 
-    public void setOrderId(Long id) { this.orderId = orderId; }
+    public void setId(Long id) { this.id = id; }
 
     public Instant getMoment() { return moment; }
 
@@ -67,7 +67,7 @@ public class Order implements Serializable {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((orderId == null) ? 0 : orderId.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 
@@ -80,11 +80,11 @@ public class Order implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         Order other = (Order) obj;
-        if (orderId == null) {
-            if (other.orderId != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
         }
-        else if (!orderId.equals(other.orderId))
+        else if (!id.equals(other.id))
             return false;
         return true;
     }
