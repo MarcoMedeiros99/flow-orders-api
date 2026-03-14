@@ -1,5 +1,6 @@
 package io.flow_orders_backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serial;
@@ -17,26 +18,28 @@ public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long categoryId;
+    private Long id;
     private String categoryName;
 
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
 
     public Category() {
     }
 
-    public Category(Long categoryId, String categoryName) {
+    public Category(Long id, String categoryName) {
         super();
-        this.categoryId = categoryId;
+        this.id = id;
         this.categoryName = categoryName;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
+    public Long getId() {
+        return id;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
+    public void setId(Long categoryId) {
+        this.id = categoryId;
     }
 
     public String getCategoryName() {
@@ -56,11 +59,11 @@ public class Category implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-        return Objects.equals(categoryId, category.categoryId);
+        return Objects.equals(id, category.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(categoryId);
+        return Objects.hashCode(id);
     }
 }

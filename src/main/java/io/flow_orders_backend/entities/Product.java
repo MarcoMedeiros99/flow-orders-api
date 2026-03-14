@@ -18,33 +18,36 @@ public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long productId;
+    private Long id;
 
     private String Name;
     private String Description;
     private Double Price;
     private String imgUrl;
 
-    @Transient
+    @ManyToMany
+    @JoinTable(name = "tb_product_category",
+    joinColumns = @JoinColumn(name = "product_id"),
+    inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
     public Product() {
     }
 
-    public Product(Long productId, String name, String description, Double price, String imgUrl) {
-        this.productId = productId;
+    public Product(Long id, String name, String description, Double price, String imgUrl) {
+        this.id = id;
         Name = name;
         Description = description;
         Price = price;
         this.imgUrl = imgUrl;
     }
 
-    public Long getProductId() {
-        return productId;
+    public Long getId() {
+        return id;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setId(Long productId) {
+        this.id = productId;
     }
 
     public String getName() {
@@ -87,12 +90,12 @@ public class Product implements Serializable {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return Objects.equals(productId, product.productId);
+        return Objects.equals(id, product.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(productId);
+        return Objects.hashCode(id);
     }
 
 
