@@ -2,6 +2,7 @@ package io.flow_orders_backend.resource;
 
 import io.flow_orders_backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.weaving.LoadTimeWeaverAware;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -45,4 +46,11 @@ public class UserResource {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
+
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User obj){
+		obj = service.update(id, obj);
+		return ResponseEntity.ok().body(obj);
+	}
+
 }
