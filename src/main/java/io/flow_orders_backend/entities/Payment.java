@@ -14,6 +14,8 @@ public class Payment implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    //Mapping & Attributes
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,6 +26,8 @@ public class Payment implements Serializable {
     @MapsId
     private Order order;
 
+    //Constructors
+
     public Payment() {
     }
 
@@ -32,6 +36,8 @@ public class Payment implements Serializable {
         this.moment = moment;
         this.order = order;
     }
+
+    //Getter and Setter
 
     public Long getId() {
         return id;
@@ -56,6 +62,8 @@ public class Payment implements Serializable {
     public void setOrder(Order order) {
         this.order = order;
     }
+
+    //Getter and Setter
 
     @Override
     public boolean equals(Object o) {

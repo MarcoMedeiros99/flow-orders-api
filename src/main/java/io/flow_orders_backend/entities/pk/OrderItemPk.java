@@ -16,6 +16,7 @@ public class OrderItemPk implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    //Mapping & Attributes
 
     @ManyToOne
     @JoinColumn(name = "order_id")
@@ -24,6 +25,8 @@ public class OrderItemPk implements Serializable {
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
+
+    //Getter and Setter
 
     public Order getOrder() {
         return order;
@@ -40,6 +43,8 @@ public class OrderItemPk implements Serializable {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    //Equals() and HashCode()
 
     @Override
     public boolean equals(Object o) {

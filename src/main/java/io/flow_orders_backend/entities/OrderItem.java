@@ -17,11 +17,15 @@ public class OrderItem implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    //Mapping & Attributes
+
     @EmbeddedId
     private OrderItemPk id = new OrderItemPk();
 
     private Integer quantity;
     private Double price;
+
+    //Constructors
 
     public OrderItem() {
     }
@@ -32,6 +36,8 @@ public class OrderItem implements Serializable {
         this.quantity = quantity;
         this.price = price;
     }
+
+    //Getter and Setter
 
     @JsonIgnore
     public Order getOrder() {
@@ -69,6 +75,8 @@ public class OrderItem implements Serializable {
     public Double getSubTotal(){
         return price * quantity;
     }
+
+    //Getter and Setter
 
     @Override
     public boolean equals(Object o) {

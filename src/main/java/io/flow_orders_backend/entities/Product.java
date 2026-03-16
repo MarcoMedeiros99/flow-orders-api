@@ -17,6 +17,8 @@ public class Product implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    //Mapping & Attributes
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,6 +37,8 @@ public class Product implements Serializable {
     @OneToMany(mappedBy = "id.product")
     private Set<OrderItem> items = new HashSet<>();
 
+    //Constructors
+
     public Product() {
     }
 
@@ -45,6 +49,8 @@ public class Product implements Serializable {
         Price = price;
         this.imgUrl = imgUrl;
     }
+
+    //Getter and Setter
 
     public Long getId() {
         return id;
@@ -99,6 +105,8 @@ public class Product implements Serializable {
         }
         return set;
     }
+
+    //Getter and Setter
 
     @Override
     public boolean equals(Object o) {

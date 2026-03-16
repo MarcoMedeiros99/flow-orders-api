@@ -16,6 +16,8 @@ public class Order implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    //Mapping & Attributes
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,6 +37,8 @@ public class Order implements Serializable {
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
 
+    //Constructors
+
     public Order() {
     }
 
@@ -45,6 +49,8 @@ public class Order implements Serializable {
         setOrderStatus(orderStatus);
         this.client = client;
     }
+
+    //Getter and Setter
 
     public Long getId() {
         return id;
@@ -99,6 +105,8 @@ public class Order implements Serializable {
         }
         return sum;
     }
+
+    //Getter and Setter
 
     @Override
     public int hashCode() {

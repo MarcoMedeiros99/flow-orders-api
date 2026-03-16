@@ -13,6 +13,8 @@ import jakarta.persistence.*;
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    //Mapping & Attributes
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +27,8 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
 
+    //Constructors
+
     public User() {
     }
 
@@ -36,6 +40,8 @@ public class User implements Serializable {
         this.phone = phone;
         this.password = password;
     }
+
+    //Getter and Setter
 
     public String getName() {
         return name;
@@ -70,6 +76,8 @@ public class User implements Serializable {
     }
 
     public List<Order> getOrders() { return orders; }
+
+    //Getter and Setter
 
     @Override
     public int hashCode() {

@@ -16,6 +16,8 @@ public class Category implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    //Mapping & Attributes
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +27,8 @@ public class Category implements Serializable {
     @ManyToMany(mappedBy = "categories")
     private Set<Product> products = new HashSet<>();
 
+    //Constructors
+
     public Category() {
     }
 
@@ -33,6 +37,8 @@ public class Category implements Serializable {
         this.id = id;
         this.categoryName = categoryName;
     }
+
+    //Getter and Setter
 
     public Long getId() {
         return id;
@@ -54,6 +60,8 @@ public class Category implements Serializable {
     public Set<Product> getProducts() {
         return products;
     }
+
+    //Equals() and HashCode()
 
     @Override
     public boolean equals(Object o) {
