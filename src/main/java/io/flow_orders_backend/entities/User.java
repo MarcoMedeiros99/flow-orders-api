@@ -77,7 +77,7 @@ public class User implements Serializable {
 
     public List<Order> getOrders() { return orders; }
 
-
+    //Equals() and HashCode()
 
     @Override
     public int hashCode() {

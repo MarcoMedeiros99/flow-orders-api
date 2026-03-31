@@ -106,7 +106,7 @@ public class Product implements Serializable {
         return set;
     }
 
-    //Getter and Setter
+    //Equals() and HashCode()
 
     @Override
     public boolean equals(Object o) {

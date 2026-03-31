@@ -76,7 +76,7 @@ public class OrderItem implements Serializable {
         return price * quantity;
     }
 
-    //Getter and Setter
+    //Equals() and HashCode()
 
     @Override
     public boolean equals(Object o) {

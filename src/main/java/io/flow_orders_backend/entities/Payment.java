@@ -63,7 +63,7 @@ public class Payment implements Serializable {
         this.order = order;
     }
 
-    //Getter and Setter
+    //Equals() and HashCode()
 
     @Override
     public boolean equals(Object o) {

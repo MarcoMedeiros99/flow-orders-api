@@ -106,7 +106,7 @@ public class Order implements Serializable {
         return sum;
     }
 
-    //Getter and Setter
+    //Equals() and HashCode()z
 
     @Override
     public int hashCode() {
